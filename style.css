@@ -1,0 +1,286 @@
+/* Default */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+	font-family: sans-serif;
+}
+
+h1, h2, h3 {
+	font-weight: bold;
+	margin-bottom: 50px;
+}
+
+a {
+	color: var(--cpurple);
+}
+
+a:hover, a:focus, a:active  {
+	color: var(--darkpurple);
+	text-decoration: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:focus, button:active {
+	outline: none;
+}
+
+button.primary {
+	background-color: rgb(255, 102, 173);
+	color: white;
+	font-weight: bold;
+	border-color: transparent;
+	border-radius: 5px;
+	box-shadow: 0 10px 20px 0 rgba(140, 82, 255, .45);
+	padding: 8.5px 15px;
+	transition: 0.25s ease background-color;
+}
+
+button.primary:hover, button.primary:focus, button.primary:active {
+	background-color: var(--darkpurple);
+}
+
+button.secondary {
+	background-color: white;
+	color: black;
+	font-weight: bold;
+	border-color: transparent;
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .15);
+	padding: 8.5px 15px;
+	transition: 0.25s ease background-color;
+}
+
+button.secondary:hover, button.secondary:focus, button.secondary:active {
+	background-color: rgb(240, 240, 240);
+}
+
+div.top {
+	margin-top: 15%;
+}
+
+div.full {
+	min-height: 100vh;
+}
+
+div.semi-full {
+	min-height: 85vh;
+}
+
+div.row {
+	margin-left: 0;
+}
+
+img.full {
+	border-radius: 5px;
+	width: 100%;
+}
+
+p.highlight {
+	color: var(--cpurple);
+	font-weight: bold;
+	font-size: .95em;
+}
+
+
+/** Animations */
+@keyframes fade-right {
+	0% {
+		opacity: 0%;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 100%;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0%;
+	}
+
+	100% {
+		opacity: 100%;
+	}
+}
+
+@keyframes status {
+	0% {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	90% {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	100% {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+/** Side Navbar */
+div.nav {
+	background-color: #FFFFFF;
+	min-width: 275px;
+	max-width: 275px;
+	height: 100vh;
+	padding: 50px 35px 35px 35px;
+	position: sticky;
+	top: 0;
+	transition: all .3s;
+	z-index: 10;
+}
+
+div.nav.active {
+	margin-left: -275px;
+}
+
+div.nav div.logo h1 {
+	font-size: 1.35em;
+	margin-top: 10px;
+	margin-left: 15px;
+	margin-right: 35px;
+	margin-bottom: 75px;
+}
+
+div.nav a.nav-link {
+	color: #000000;
+	padding: 13px 35px;
+	border-radius: 25px;
+	margin-bottom: 25px;
+	transition: 0.5s ease background-color;
+}
+
+div.nav a.nav-link:hover, a.nav-link:active, a.nav-link:focus {
+	background-color: rgb(252, 155, 149);
+	color: white;
+	cursor: pointer;
+}
+
+div.nav a.nav-link.active {
+	background-color: rgb(255, 102, 173);
+}
+
+div.nav a.nav-link.logout {
+	position: absolute;
+	left: 35px;
+	bottom: 50px;
+	width: 75%;
+}
+
+button.sidenav-toggler {
+	background-color: rgb(255, 102, 173);
+	padding: 15px 17px;
+	border-radius: 15px;
+	border: none;
+	outline: none;
+	user-select: none;
+	position: fixed;
+	top: 100px;
+	left: 35px;
+	transition: all .3s;
+	display: none;
+	z-index: 100;
+}
+
+button.sidenav-toggler:hover {
+	background-color: rgb(252, 155, 149);
+	cursor: pointer;
+}
+
+button.sidenav-toggler.active {
+	left: 305px;
+}
+
+button.sidenav-toggler.active img {
+	content: url("image/sidenav-active.svg");
+}
+
+/** Content */
+div.tab-content {
+	min-height: 100vh;
+	transition: all .3s;
+	margin: auto;
+	margin-top: 50px;
+}
+
+/** Notes */
+div.notes-panel {
+	margin-bottom: 50px;
+}
+
+div.notes-panel div.profile {
+	margin-bottom: 15px;
+}
+
+div.notes-panel div.profile img {
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+div.notes-panel div.profile p {
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
+div.notes-panel img.full {
+	border: 1px solid #bcc0c4;
+	border-radius: 15px;
+	max-width: 600px;
+}
+
+div.notes-panel div.buttons {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+div.notes-panel div.buttons img {
+	margin-right: 15px;
+}
+
+div.notes-panel p.likes {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+/** Responsive CSS */
+@media (max-width: 1100px) {
+
+	div.nav {
+		margin-left: -275px;
+	}
+
+	div.nav.active {
+		margin-left: 0;
+	}
+
+	button.navbar-toggler {
+		margin-top: 0;
+	}
+
+	button.sidenav-toggler {
+		display: initial;
+	}
+
+}
+
+@media (max-width: 576px) {
+
+	div.tab-content {
+		margin-top: -700px;
+	}
+
+	div.notes-panel img.full {
+		max-width: 400px;
+	}
+
+}
