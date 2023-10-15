@@ -186,7 +186,7 @@ button.sidenav-toggler {
 	user-select: none;
 	position: fixed;
 	top: 100px;
-	left: 35px;
+	left: 25px;
 	transition: all .3s;
 	display: none;
 	z-index: 100;
